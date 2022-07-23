@@ -10,15 +10,20 @@
 
 const carsService = require('../services/cars.service');
 
-const get = function(req, res){
+const get = function (req, res) {
     res.send(carsService.get(req.params._id))
 }
 
-const getAll = function(req, res){
+const getByName = function (req, res) {
+    res.send(carsService.getByName(req.params._name))
+}
+
+const getAll = function (req, res) {
     res.send(carsService.getAll())
 }
 
 module.exports = {
     get,
+    getByName,
     getAll
 };
